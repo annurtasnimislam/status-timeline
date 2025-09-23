@@ -113,6 +113,7 @@ function App() {
                 'rider_on_the_way',
                 'delivered',
               ];
+
               const activeIndex = stepOrder.indexOf(activeStatus);
               const currentIndex = stepOrder.indexOf(item.step);
 
