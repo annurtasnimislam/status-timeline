@@ -4,10 +4,39 @@ import './App.css';
 function App() {
   const [activeStatus, setActiveStatus] = useState('delivered');
 
+  const statusOptions = [
+    { value: 'pending', label: 'Pending' },
+    { value: 'confirmed', label: 'Confirmed' },
+    { value: 'processing', label: 'Processing' },
+    { value: 'ready_for_shipment', label: 'Ready for Shipment' },
+    { value: 'hand_over_to_rider', label: 'Hand Over to Rider' },
+    { value: 'rider_on_the_way', label: 'Rider on the Way' },
+    { value: 'delivered', label: 'Delivered' },
+    { value: 'cancelled', label: 'Cancelled' },
+    { value: 'failed', label: 'Failed' },
+    { value: 'on_hold', label: 'On Hold' },
+    { value: 'customer_was_not_available', label: 'Customer Unavailable' },
+  ];
+
   return (
-    <div className="h-[40vh] flex items-center justify-center">
-      <div className="border border-gray-200 p-12">
-        <p className="mb-8 font-semibold">Status Timeline</p>
+    <div className="h-[40vh] flex flex-col items-center justify-center border border-gray-200 p-12">
+      <div className="">
+        <div className="flex justify-between items-center mb-10">
+          <p className="font-semibold">Status Timeline</p>
+          <select
+            id="status"
+            value={activeStatus}
+            onChange={e => setActiveStatus(e.target.value)}
+            className="border bg-white border-gray-300 rounded p-2 focus:outline-none"
+          >
+            {statusOptions.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="relative mt-4 flex flex-col lg:flex-row">
           {[
             {
