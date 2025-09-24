@@ -19,15 +19,15 @@ function App() {
   ];
 
   return (
-    <div className="h-[40vh] flex flex-col items-center justify-center border border-gray-200 p-12">
+    <div className="sm:h-[40vh] flex flex-col items-center justify-center border border-gray-200 p-12">
       <div className="">
-        <div className="flex justify-between items-center mb-10">
-          <p className="font-semibold">Status Timeline</p>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-10">
+          <p className="font-semibold text-base sm:text-lg">Status Timeline</p>
           <select
             id="status"
             value={activeStatus}
             onChange={e => setActiveStatus(e.target.value)}
-            className="border bg-white border-gray-300 rounded p-2 focus:outline-none"
+            className="border bg-white border-gray-300 rounded px-3 sm:py-2 py-1 text-sm sm:text:md  focus:outline-none w-full sm:w-auto"
           >
             {statusOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -167,7 +167,7 @@ function App() {
                 </div>
                 <div className="flex flex-col items-start lg:items-center mt-[-10px] lg:mt-2">
                   <p className="text-sm block lg:hidden font-semibold mt-6">{item.status}</p>
-                  <p className="text-xs text-gray-500 text-center max-w-xs">{item.desc}</p>
+                  <p className="text-xs text-gray-500  sm:text-center max-w-xs">{item.desc}</p>
                 </div>
               </div>
             );
