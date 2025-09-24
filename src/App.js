@@ -27,7 +27,7 @@ function App() {
             id="status"
             value={activeStatus}
             onChange={e => setActiveStatus(e.target.value)}
-            className="border bg-white border-gray-300 rounded px-3 sm:py-2 py-1 text-sm sm:text:md  focus:outline-none w-full sm:w-auto"
+            className="border bg-white border-gray-300 rounded px-3 sm:py-2 py-1 text-sm sm:text-base  focus:outline-none w-full sm:w-auto"
           >
             {statusOptions.map(option => (
               <option key={option.value} value={option.value}>
